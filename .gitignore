@@ -1,0 +1,20 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Old files
+*_files/
+homepage-option-*.html
+concept-*.html
+concepts/
+other concepts/
+board-members.md
+headshots/
+
+# Temporary files
+*.tmp
+*.bak
