@@ -15,7 +15,8 @@
     <header>
         <nav>
             <div class="logo">BDF<span>TEXAS</span></div>
-            <ul class="nav-links">
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="financed-projects.html">Financed Projects</a></li>
@@ -25,6 +26,21 @@
             </ul>
         </nav>
     </header>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+        
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 
     <section class="page-hero">
         <h1>About Business Development Funds of Texas</h1>
