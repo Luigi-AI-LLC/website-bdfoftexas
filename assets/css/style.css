@@ -645,10 +645,6 @@ footer {
         gap: 2rem;
     }
     
-    .nav-links {
-        display: none;
-    }
-    
     .cta-buttons {
         flex-direction: column;
         align-items: center;
@@ -661,9 +657,7 @@ footer {
     .page-hero h1 {
         font-size: 2.5rem;
     }
-}
-
-@media (max-width: 768px) {
+    
     header {
         padding: 1rem;
     }
