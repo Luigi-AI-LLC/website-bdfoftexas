@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership & Board Details | Business Development Funds of Texas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .accordion-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .person-accordion {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .person-header {
+            display: flex;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            border: none;
+            width: 100%;
+            text-align: left;
+            background: white;
+        }
+        .person-header:hover {
+            background: #f8f9fa;
+        }
+        .person-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        .person-info {
+            flex: 1;
+        }
+        .person-info h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #1a365d;
+        }
+        .person-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        .expand-icon {
+            font-size: 1.5rem;
+            color: #1a365d;
+            transition: transform 0.3s;
+        }
+        .person-accordion.active .expand-icon {
+            transform: rotate(45deg);
+        }
+        .person-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .person-accordion.active .person-content {
+            max-height: 500px;
+        }
+        .person-bio {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: #444;
+            line-height: 1.7;
+        }
+        .person-contact {
+            padding: 0 1.5rem 1rem 1.5rem;
+            font-size: 0.9rem;
+        }
+        .person-contact a {
+            color: #1a365d;
+        }
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        📞 Call us today: (956) 616-9348 | <a href="contact.html">Schedule a Free Consultation</a>
+    </div>
+    
+    <header>
+        <nav>
+            <div class="logo">BDF<span>TEXAS</span></div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="board-detail.html">Board</a></li>
+                <li><a href="financed-projects.html">Financed Projects</a></li>
+                <li><a href="resources.html">Resources & Partnerships</a></li>
+                <li><a href="sba-504.html">SBA 504</a></li>
+                <li><a href="contact.html" class="nav-cta">Apply Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+        
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <section class="page-hero">
+        <h1>Leadership & Board of Directors</h1>
+        <p>Meet the experienced professionals guiding Business Development Funds of Texas</p>
+    </section>
+
+    <section class="page-content">
+        <div class="content-section">
+            <h2>Our Leadership Team</h2>
+            <p class="section-intro">Our experienced team is dedicated to helping Texas businesses grow and succeed through strategic financing solutions. Click on a name to learn more.</p>
+            
+            <div class="accordion-container">
+                <div class="person-accordion">
+                    <button class="person-header" onclick="this.parentElement.classList.toggle('active')">
+                        <img src="assets/images/placeholder-avatar.svg" alt="Daniela Sosa">
+                        <div class="person-info">
+                            <h3>Daniela Sosa</h3>
+                            <div class="person-meta">Director | Business Development Funds of Texas</div>
+                        </div>
+                        <span class="expand-icon">+</span>
+                    </button>
+                    <div class="person-content">
+                        <div class="person-bio">Serves as the BLDC dba Business Development Fund of Texas Director since October 2021, where she oversees the program and staff in delivering quality advisement and assistance to the business community. Through strategic planning and key stakeholder relationships, Ms. Sosa guides the BLDC dba Business Development Fund of Texas team to meet and exceed goals in the areas of business development to impact the economic climate of the southern portion of Texas.</div>
+                    </div>
+                </div>
+
+                <div class="person-accordion">
+                    <button class="person-header" onclick="this.parentElement.classList.toggle('active')">
+                        <img src="assets/images/placeholder-avatar.svg" alt="Cyndi Garza">
+                        <div class="person-info">
+                            <h3>Cyndi Garza</h3>
+                            <div class="person-meta">Loan Officer | Business Development Funds of Texas</div>
+                        </div>
+                        <span class="expand-icon">+</span>
+                    </button>
+                    <div class="person-content">
+                        <div class="person-bio">Serves as the BLDC dba Business Development Fund of Texas Loan Officer since November 2022. Ms. Garza is responsible for identifying and supporting the financial needs of local businesses and working with them throughout the loan process. Ms. Garza has over 20 years of banking experience, which includes consumer and commercial lending, mortgage warehouse lending, and SBA emergency response. She also has held a Texas real estate license for 9 years. Ms. Garza is bilingual and able to assist Spanish-speaking clients.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Board of Directors</h2>
+            <p class="section-intro">Our board of directors brings together experienced professionals from banking, finance, legal, and business sectors. Click on a name to read their full biography.</p>
+            
+            <div class="accordion-container">
+                <div class="person-accordion">
+                    <button class="person-header" onclick="this.parentElement.classList.toggle('active')">
+                        <img src="assets/images/placeholder-avatar.svg" alt="Louie Tijerina">
+                        <div class="person-info">
+                            <h3>Louie Tijerina</h3>
+                            <div class="person-meta">Board Chair | Lone Star National Bank</div>
+                        </div>
+                        <span class="expand-icon">+</span>
+                    </button>
+                    <div class="person-content">
+                        <div class="person-bio">Serves as the BLDC dba Business Development Fund of Texas board chair with expertise in commercial lending. With more than 45 years of experience in consumer and commercial banking, he holds the position of Business Relationship Manager IV at Lone Star National Bank. His extensive leadership background includes roles at esteemed institutions such as JP Morgan Chase, Wells Fargo Bank, and BBVA Compass. He holds a BBA and MBA from the University of Texas Brownsville and has earned a Graduate School of Banking certificate from South Louisiana State University.</div>
+                    </div>
+                </div>
+
+                <div class="person-accordion">
+                    <button class="person-header" onclick="this.parentElement.classList.toggle('active')">
+                        <img src="assets/images/placeholder-avatar.svg" alt="Manuel Torres">
+                        <div class="person-info">
+                            <h3>Manuel Torres</h3>
+                            <div class="person-meta">Vice Chair | BLDC dba Business Development Fund of Texas</div>
+                        </div>
+                        <span class="expand-icon">+</span>
+                    </button>
+                    <div class="person-content">
+                        <div class="person-bio">VP Chair of BLDC dba Business Development Fund of Texas, specializes in corporate governance. He's held leadership roles at Brownsville ISD, Texas Southmost College, and UT Brownsville. He holds a BBA from Pan American University, an MS from Texas A&I University (adult education), and pursued a doctorate at the University of Houston in educational administration.</div>
+                    </div>
+                </div>
+
+                <div class="person-accordion">
+                    <button class="person-header" onclick="this.parentElement.classList.toggle('active')">
+                        <img src="assets/images/Moises Gomez.png" alt="Moises Gomez">
+                        <div class="person-info">
+                            <h3>Moises Gomez</h3>
+                            <div class="person-meta">Secretary | Gomez-Fragoso & Associates</div>
+                        </div>
+                        <span class="expand-icon">+</span>
+                    </button>
+                    <div class="person-content">
+                        <div class="person-contact">
+                            <a href="mailto:mgomez@gfacpas.com">mgomez@gfacpas.com</a> | <a href="tel:+19565417613">(956) 541-7613</a>
+                        </div>
+                        <div class="person-bio">Secretary of BLDC dba Business Development Fund of Texas, specializes in internal controls. Moises Gomez, CPA is a certified public accountant registered with the state of Texas. Mr. Gomez has extensive experience in accounting for local, mid-sized and large companies as well as aiding those same size companies with tax preparation, audits, consulting, and software implementation. He graduated from A & I Kingsville University with a Bachelor of Business Administration Degree in Accounting. He has almost 50 years of accounting and tax experience.</div>
+                    </div>
+                </div>
+
+                <div class="person-accordion">
+                    <button class="person-header" onclick="this.parentElement.classList.toggle('active')">
+                        <img src="assets/images/placeholder-avatar.svg" alt="Lloyd Molina">
+                        <div class="person-info">
+                            <h3>Lloyd Molina</h3>
+                            <div class="person-meta">Treasurer | International Bank</div>
+                        </div>
+                        <span class="expand-icon">+</span>
+                    </button>
+                    <div class="person-content">
+                        <div class="person-contact">
+                            <a href="mailto:lloydm.6048@gmail.com">lloydm.6048@gmail.com</a> | <a href="tel:+19565456419">(956) 545-6419</a>
+                        </div>
+                        <div class="person-bio">Acts as the Treasurer for BLDC, also known as Business Development Fund of Texas, specializing in commercial lending. With 19 years in consumer and commercial banking, he's held significant positions at Texas State Bank (Compass), Rio Bank, Regional Management, and currently serves as a Branch Manager at International Bank. Mr. Molina earned his Bachelor of Arts in Business Administration from Schreiner University.</div>
+                    </div>
+                </div>
+
+                <div class="person-accordion">
+                    <button class="person-header" onclick="this.parentElement.classList.toggle('active')">
+                        <img src="assets/images/placeholder-avatar.svg" alt="Roy Esqueda">
+                        <div class="person-info">
+                            <h3>Roy Esqueda</h3>
+                            <div class="person-meta">Director | JPMorgan Chase & Co.</div>
+                        </div>
+                        <span class="expand-icon">+</span>
+                    </button>
+                    <div class="person-content">
+                        <div class="person-bio">Serves as the BLDC dba Business Development Fund of Texas as a director with expertise in commercial lending. With 35 years of experience in both consumer and commercial banking, he has held notable leadership positions at JPM Chase & Co. since 1998 and continues to do so. Mr. Esqueda pursued his education at the University of Pan American in 1985.</div>
+                    </div>
+                </div>
+
+                <div class="person-accordion">
+                    <button class="person-header" onclick="this.parentElement.classList.toggle('active')">
+                        <img src="assets/images/placeholder-avatar.svg" alt="Patricia Ayala">
+                        <div class="person-info">
+                            <h3>Patricia Ayala</h3>
+                            <div class="person-meta">Director | Retired from Frost Bank</div>
+                        </div>
+                        <span class="expand-icon">+</span>
+                    </button>
+                    <div class="person-content">
+                        <div class="person-bio">Serves as the BLDC dba Business Development Fund of Texas as a director with expertise in commercial lending. With 47 years of experience in management, retail banking, and commercial lending, she has held leadership roles at Frost since 2007 until 2023; that Mrs. Ayala decided to retire and spend time with family. Mrs. Ayala holds a CBA completion from The University of Virginia at Charlottesville.</div>
+                    </div>
+                </div>
+
+                <div class="person-accordion">
+                    <button class="person-header" onclick="this.parentElement.classList.toggle('active')">
+                        <img src="assets/images/placeholder-avatar.svg" alt="Lizette Putegnat">
+                        <div class="person-info">
+                            <h3>Lizette Putegnat</h3>
+                            <div class="person-meta">Director | Titan Fuel</div>
+                        </div>
+                        <span class="expand-icon">+</span>
+                    </button>
+                    <div class="person-content">
+                        <div class="person-contact">
+                            <a href="mailto:lizzydlg@gmail.com">lizzydlg@gmail.com</a> | <a href="tel:+19564558383">(956) 455-8383</a>
+                        </div>
+                        <div class="person-bio">Serves as the BLDC dba Business Development Fund of Texas as a director with expertise in Workforce Development and Community. For the last 17 years, "Lizzy" has been passionately working and volunteering in the Rio Grande Valley. Mrs. Putegnat has taken on leadership responsibilities at WHIN Group, Brownsville Economic Development Council, Schneider Electric, and currently at Titan Fuel. She holds a Bachelor of Arts in Public Policy Studies, along with a minor in dance and a certificate in markets and management from Duke University.</div>
+                    </div>
+                </div>
+
+                <div class="person-accordion">
+                    <button class="person-header" onclick="this.parentElement.classList.toggle('active')">
+                        <img src="assets/images/placeholder-avatar.svg" alt="Markus Villanueva">
+                        <div class="person-info">
+                            <h3>Markus Villanueva</h3>
+                            <div class="person-meta">Director | Capital One</div>
+                        </div>
+                        <span class="expand-icon">+</span>
+                    </button>
+                    <div class="person-content">
+                        <div class="person-bio">Director at BLDC, known as Business Development Fund of Texas, specializes in commercial lending. With almost 36 years of financial experience, he's led across the United States Air Force, Business division of South Texas College, and now at Capital One as Director-City President. Mr. Villanueva holds a Bachelor and Master's Degree in Business Administration from University of Texas-Brownsville.</div>
+                    </div>
+                </div>
+
+                <div class="person-accordion">
+                    <button class="person-header" onclick="this.parentElement.classList.toggle('active')">
+                        <img src="assets/images/Hector Picazo.png" alt="Hector D. Picazo">
+                        <div class="person-info">
+                            <h3>Hector D. Picazo</h3>
+                            <div class="person-meta">Director | Sanchez Whittington Wood & Orozco, LLC</div>
+                        </div>
+                        <span class="expand-icon">+</span>
+                    </button>
+                    <div class="person-content">
+                        <div class="person-contact">
+                            <a href="mailto:HPicazo@southtexaslegal.com">HPicazo@southtexaslegal.com</a> | <a href="tel:+19565463731">(956) 546-3731</a>
+                        </div>
+                        <div class="person-bio">Director at BLDC, is an attorney at Sanchez Whittington Wood & Orozco, LLC in Brownsville, Texas. He enjoys a diverse practice that includes Bankruptcy, Business, Real Estate, Probate, and DTPA cases. He earned his B.S. in History from Texas State University in 2010, and obtained a J.D. from Texas Southern University-Thurgood Marshall School of Law in 2017. At TMSL, Hector was a published author in the TMSL Journal on Gender, Race and Justice, and graduated summa cum laude. Hector was also an adjunct professor at Texas Southmost College and is a licensed Texas Realtor.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-fullwidth">
+        <h2>Ready to Work With Us?</h2>
+        <p>Let's discuss how we can help your business achieve its growth goals with the right financing solution.</p>
+        <div class="cta-buttons">
+            <a href="contact.html" class="btn-large btn-white">Contact Us Today</a>
+            <a href="sba-504.html" class="btn-large btn-outline-white">Learn About SBA 504</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem;">Business Development Funds of Texas</p>
+            <p>Promoting economic development by assisting the growth of Texas businesses.</p>
+            <p>&copy; 2026 Business Development Funds of Texas. All rights reserved.</p>
+            <div style="margin-top: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.85rem; color: #666;">
+                <span>Created by</span>
+                <a href="https://luigiai.dev" target="_blank" rel="noopener">
+                    <img src="Luigi AI Logo.png" alt="Luigi AI" style="height: 24px; width: auto;">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
