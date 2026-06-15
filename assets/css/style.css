@@ -683,8 +683,8 @@ footer {
         display: none;
         width: 100%;
         flex-direction: column;
-        gap: 0.5rem;
-        padding-top: 1rem;
+        gap: 1.25rem;
+        padding-top: 1.5rem;
         border-top: 1px solid #e2e8f0;
     }
     
