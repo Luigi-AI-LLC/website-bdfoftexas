@@ -168,6 +168,69 @@
         </div>
     </section>
 
+    <section class="loan-estimator" id="loan-estimator" aria-labelledby="estimatorTitle">
+        <div class="estimator-container">
+            <div class="estimator-heading">
+                <p class="estimator-eyebrow" data-i18n="eyebrow">PLAN WITH CONFIDENCE</p>
+                <h2 id="estimatorTitle" data-i18n="title">Estimate Your Loan</h2>
+                <p data-i18n="subtitle">Explore an estimated monthly payment and see how a BDF Texas financing option may compare to a higher-rate bank loan.</p>
+            </div>
+
+            <div class="estimator-toolbar">
+                <div class="estimator-toggle" role="group" aria-label="Language selection">
+                    <button class="toggle-button is-active" type="button" data-language="en" aria-pressed="true">English</button>
+                    <button class="toggle-button" type="button" data-language="es" aria-pressed="false">Español</button>
+                </div>
+                <div class="estimator-toggle" role="group" aria-label="Business stage selection">
+                    <button class="toggle-button is-active" type="button" data-stage="startup" aria-pressed="true" data-i18n="startup">Startup</button>
+                    <button class="toggle-button" type="button" data-stage="established" aria-pressed="false" data-i18n="established">Established</button>
+                </div>
+            </div>
+
+            <div class="estimator-card">
+                <div class="estimator-controls">
+                    <div class="slider-control">
+                        <div class="slider-label-row">
+                            <label for="loanAmount" data-i18n="loanAmount">Loan amount</label>
+                            <output id="loanAmountValue" for="loanAmount">$25,000</output>
+                        </div>
+                        <input type="range" id="loanAmount" min="1000" max="25000" step="1000" value="25000">
+                        <div class="slider-range"><span>$1k</span><span id="loanAmountMaximum">$25k</span></div>
+                    </div>
+
+                    <div class="slider-control">
+                        <div class="slider-label-row">
+                            <label for="loanTerm" data-i18n="repaymentTerm">Repayment term</label>
+                            <output id="loanTermValue" for="loanTerm">5 years</output>
+                        </div>
+                        <input type="range" id="loanTerm" min="1" max="7" step="1" value="5">
+                        <div class="slider-range"><span data-i18n="oneYear">1 year</span><span data-i18n="sevenYears">7 years</span></div>
+                    </div>
+
+                    <p class="estimator-note" data-i18n="estimateNote">These figures are planning estimates, not a commitment or offer of credit.</p>
+                </div>
+
+                <div class="estimator-results" aria-live="polite">
+                    <div class="rate-summary">
+                        <span data-i18n="estimatedRate">Estimated rate</span>
+                        <strong id="estimatedRate">7.25%</strong>
+                        <small data-i18n="rateNote">Based on your business stage and selected term</small>
+                    </div>
+                    <div class="payment-summary">
+                        <span data-i18n="estimatedPayment">Estimated monthly payment</span>
+                        <strong id="monthlyPayment">$5,114</strong>
+                    </div>
+                    <div class="bank-comparison">
+                        <p data-i18n="comparisonLabel">Compared with a higher-rate bank loan</p>
+                        <strong id="monthlySavings">$887 less per month</strong>
+                        <span id="totalSavings">Estimated savings of $212,880 over the loan term</span>
+                    </div>
+                    <a href="contact.html" class="estimator-cta" data-i18n="cta">Talk with a financing specialist</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-content">
             <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem;">Business Development Funds of Texas</p>
@@ -181,5 +244,95 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const loanAmount = document.getElementById('loanAmount');
+        const loanTerm = document.getElementById('loanTerm');
+        const loanAmountValue = document.getElementById('loanAmountValue');
+        const loanAmountMaximum = document.getElementById('loanAmountMaximum');
+        const loanTermValue = document.getElementById('loanTermValue');
+        const estimatedRate = document.getElementById('estimatedRate');
+        const monthlyPayment = document.getElementById('monthlyPayment');
+        const monthlySavings = document.getElementById('monthlySavings');
+        const totalSavings = document.getElementById('totalSavings');
+        const languageButtons = document.querySelectorAll('[data-language]');
+        const stageButtons = document.querySelectorAll('[data-stage]');
+        let language = 'en';
+        let stage = 'startup';
+
+        const translations = {
+            en: {
+                eyebrow: 'PLAN WITH CONFIDENCE', title: 'Estimate Your Loan', subtitle: 'Explore an estimated monthly payment and see how a BDF Texas financing option may compare to a higher-rate bank loan.', startup: 'Startup', established: 'Established', loanAmount: 'Loan amount', repaymentTerm: 'Repayment term', oneYear: '1 year', sevenYears: '7 years', estimateNote: 'These figures are planning estimates, not a commitment or offer of credit.', estimatedRate: 'Estimated rate', rateNote: 'Based on your business stage and selected term', estimatedPayment: 'Estimated monthly payment', comparisonLabel: 'Compared with a higher-rate bank loan', cta: 'Talk with a financing specialist', years: 'years', lessPerMonth: 'less per month', totalSavings: 'Estimated savings of {value} over the loan term'
+            },
+            es: {
+                eyebrow: 'PLANIFIQUE CON CONFIANZA', title: 'Estime su préstamo', subtitle: 'Explore un pago mensual estimado y vea cómo una opción de financiamiento de BDF Texas puede compararse con un préstamo bancario de mayor tasa.', startup: 'Empresa nueva', established: 'Empresa establecida', loanAmount: 'Monto del préstamo', repaymentTerm: 'Plazo de pago', oneYear: '1 año', sevenYears: '7 años', estimateNote: 'Estas cifras son estimaciones de planificación, no un compromiso ni una oferta de crédito.', estimatedRate: 'Tasa estimada', rateNote: 'Según la etapa de su empresa y el plazo seleccionado', estimatedPayment: 'Pago mensual estimado', comparisonLabel: 'Comparado con un préstamo bancario de mayor tasa', cta: 'Hable con un especialista en financiamiento', years: 'años', lessPerMonth: 'menos por mes', totalSavings: 'Ahorro estimado de {value} durante el plazo del préstamo'
+            }
+        };
+
+        const formatCurrency = value => new Intl.NumberFormat(language === 'es' ? 'es-US' : 'en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+
+        function calculatePayment(principal, annualRate, years) {
+            const monthlyRate = annualRate / 100 / 12;
+            const payments = years * 12;
+            return principal * (monthlyRate * Math.pow(1 + monthlyRate, payments)) / (Math.pow(1 + monthlyRate, payments) - 1);
+        }
+
+        function updateTranslations() {
+            const copy = translations[language];
+            document.documentElement.lang = language;
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                element.textContent = copy[element.dataset.i18n];
+            });
+        }
+
+        function updateEstimate() {
+            const maximumLoanAmount = stage === 'startup' ? 25000 : 50000;
+            loanAmount.max = maximumLoanAmount;
+            loanAmountMaximum.textContent = maximumLoanAmount === 25000 ? '$25k' : '$50k';
+            if (Number(loanAmount.value) > maximumLoanAmount) loanAmount.value = maximumLoanAmount;
+
+            const amount = Number(loanAmount.value);
+            const term = Number(loanTerm.value);
+            const baseRate = stage === 'startup' ? 7.25 : 6.25;
+            const estimatedAnnualRate = baseRate + (term <= 5 ? 0.35 : 0);
+            const bankAnnualRate = estimatedAnnualRate + 2.5;
+            const estimatedMonthlyPayment = calculatePayment(amount, estimatedAnnualRate, term);
+            const bankMonthlyPayment = calculatePayment(amount, bankAnnualRate, term);
+            const totalEstimatedSavings = (bankMonthlyPayment - estimatedMonthlyPayment) * term * 12;
+            const copy = translations[language];
+
+            loanAmountValue.textContent = formatCurrency(amount);
+            loanTermValue.textContent = `${term} ${copy.years}`;
+            estimatedRate.textContent = `${estimatedAnnualRate.toFixed(2)}%`;
+            monthlyPayment.textContent = formatCurrency(estimatedMonthlyPayment);
+            monthlySavings.textContent = `${formatCurrency(bankMonthlyPayment - estimatedMonthlyPayment)} ${copy.lessPerMonth}`;
+            totalSavings.textContent = copy.totalSavings.replace('{value}', formatCurrency(totalEstimatedSavings));
+        }
+
+        languageButtons.forEach(button => button.addEventListener('click', () => {
+            language = button.dataset.language;
+            languageButtons.forEach(item => {
+                const selected = item === button;
+                item.classList.toggle('is-active', selected);
+                item.setAttribute('aria-pressed', selected);
+            });
+            updateTranslations();
+            updateEstimate();
+        }));
+
+        stageButtons.forEach(button => button.addEventListener('click', () => {
+            stage = button.dataset.stage;
+            stageButtons.forEach(item => {
+                const selected = item === button;
+                item.classList.toggle('is-active', selected);
+                item.setAttribute('aria-pressed', selected);
+            });
+            updateEstimate();
+        }));
+
+        loanAmount.addEventListener('input', updateEstimate);
+        loanTerm.addEventListener('input', updateEstimate);
+        updateEstimate();
+    </script>
 </body>
 </html>
